@@ -1,5 +1,6 @@
 <mat-nav-list>
   <a
+    *ngIf="!isAuth"
     mat-list-item
     routerLink="/signup"
     routerLinkActive="active"
@@ -8,6 +9,7 @@
     <mat-icon>person_add</mat-icon><span class="nav-caption">Signup</span>
   </a>
   <a
+    *ngIf="!isAuth"
     mat-list-item
     routerLink="/login"
     routerLinkActive="active"
@@ -16,6 +18,7 @@
     <mat-icon>login</mat-icon><span class="nav-caption">Login</span></a
   >
   <a
+    *ngIf="isAuth"
     mat-list-item
     routerLink="/training"
     routerLinkActive="active"
@@ -24,7 +27,7 @@
     <mat-icon>fitness_center</mat-icon
     ><span class="nav-caption">Training</span></a
   >
-  <mat-list-item>
+  <mat-list-item *ngIf="isAuth">
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>logout</mat-icon><span class="nav-caption">Logout</span>
     </button>
