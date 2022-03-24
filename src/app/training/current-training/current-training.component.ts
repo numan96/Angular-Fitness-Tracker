@@ -25,13 +25,14 @@ export class CurrentTrainingComponent implements OnInit {
     const step =
       (this._trainingService.getRunningExercise().duration / 100) * 1000;
     this.timer = window.setInterval(() => {
-      this.progress = this.progress + 5;
+      this.progress = this.progress + 1;
       if (this.progress >= 100) {
         this._trainingService.completeExercise();
         clearInterval(this.timer);
       }
     }, step);
   }
+
   onStop() {
     clearInterval(this.timer);
 

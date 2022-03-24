@@ -28,6 +28,7 @@
       <mat-error>Invalid password.</mat-error>
     </mat-form-field>
     <button
+      *ngIf="!isLoading"
       mat-raised-button
       color="primary"
       type="submit"
@@ -35,5 +36,6 @@
     >
       Submit
     </button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
   </form>
 </section>
